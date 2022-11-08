@@ -1,12 +1,9 @@
   		%Key,
-      SalesDocument & WERKS as JoinKey,
       SalesDocument,//y
       SalesDocumentItem,
+      AUART as "Sales Document Type",
       MATNR AS UOM_KEY,//y
-      //ZPBUDESC as [Profit Business Unit Description],//y
-      WERKS AS "Plant", 
-      //ZPLCATDESC as "P&L Category Desc", 
-      ZPLCATDESC AS PnLCategoryDescription,
+      WERKS AS "Plant",
       DAY as "Day",
       WEEK as "Week",
       ZCAL_MONTH as "Month",
@@ -16,9 +13,9 @@
       SHIP_TO_DESC AS ShiptoDescription,//y
       ABGRU as "Reason For Rejection",//y
       ZCAL_DATE,
-      date(ZCAL_DATE) as Date_,
       DATEN,
       VDATU,
+      Company_Code as "Company",
       Company_Description AS [Company Description],//y
       PLANT_DESC as PlantDesc,//y
       ZCAL_CustOrdItemFillQty as "Cust Ord Item Fill Qty",//y
@@ -31,22 +28,18 @@
       ZCAL_DlvyItemCarrierOnTimeQty_Cust_1 as "Dlvy Item Carrier On Time Qty Cust1",//y
       ZCAL_DlvyItemLoadByTimeQty_Cust_1 as "Dlvy Item Load By Time Qty Cust1",//y
       ZCAL_LFIMG_ActLoadEndTime_Cust_1 as "LFIMG Act Load End Time Cust1",//y
+      ZCAL_LFIMG as "Delivery Quantity / Shipped Cases",
       SOURCE,//y
+      VSBED as [Shipping Condition],
       VSBED_DESC as [Shipping Condition Desc],//y
       LATE_REASON_CODE as "Late Reason Code",
-      TDLNR_DESC as [Forwarding Agent Description],
-      MAKTX as "Material Desc",
-     // STOCK_TRANSFER as "SPLT Desc",  //Not needed 
-     SHIP_TO_DESC as "Ship to Desc",  
-           
-       LIFNR as "Vendor",                                         
-//       as "Product Hierarchy"  // material Hierarchy?
-//       as "Dv", // don't have in SCM verify need with fran
-//       as "DCI",  //verify 
-	   AUART as "Sales Document Type",    
-//        MENGE as "PO Quantity",       //add to SCM QVD
-       zcal_meinh as "UOM",
-       PRODUCT_CATEGORY_CODE as "Hierarchy", 
-       PRODUCT_CATEGORY_DESCRIPTION as "Hierarchy Desc", 
-        ARBPL as "Production WorkCenter",
-        ZCAL_WEMNG_UoM as "FPS Actual"
+      zcal_planld_end_date As "Planned Load End Date",
+      TDLNR_DESC as "Forwarding Agent Description",
+      TKNUM as "Shipment",
+      _BIC_ZSHIP_TO as "Ship To",
+      SHIP_TO_DESC as "Ship To Desc",
+       UPLEN as "Planned Time for End Load",
+       UALEN as "Actual Time for End Load",
+       DALEN as "Actual Date for End Load",
+       UALEN,
+       DALEN
